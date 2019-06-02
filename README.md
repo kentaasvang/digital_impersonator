@@ -8,6 +8,9 @@ Run the impersonator by executing `run-services.py`, or run the two services sep
 * Setup script
     * figure out how source the virtual environment in the running terminal
     * create similar script to run on windows
+* Software Architecture
+    * change structure, MVC or MVVM
+    * refactor back\_end\_processor.py
 
 **Who did what**
 
