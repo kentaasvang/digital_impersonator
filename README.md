@@ -5,9 +5,9 @@ Digital impersonator is a project about using spaCy, Markov chains/markovify and
 Run the impersonator by executing `run-services.py`, or run the two services seperatly (being `run-client.py` and `run-server.py`).
 
 **TODO:**
-
-* Implement HTTPS
-* think about config.py-file for settings (handy for future security-stuff as well)
+* Setup script
+    * figure out how source the virtual environment in the running terminal
+    * create similar script to run on windows
 
 **Who did what**
 
