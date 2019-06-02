@@ -8,11 +8,25 @@ if ! hash virtualenv; then
 else
         # install and source virtual environment
         virtualenv venv
-        source venv/bin/activate
+	
+	echo "Waiting for virtual environment.."
+
+	while ! source venv/bin/activate
+	do
+		sleep 1
+	done
+
+	source venv/bin/activate
+	echo "Virtualenvironment done!"
 
         # install requirements
         pip install -r requirements.txt
 
-        # download spacy's web dictionary
+        # download spacys web dictionary
         python -m spacy download en_core_web_sm
 fi
+
+echo " "
+echo "Remember to source venv/bin/activate"
+echo " "
+
