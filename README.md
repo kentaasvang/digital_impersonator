@@ -6,6 +6,7 @@ Run the impersonator by executing `run-services.py`, or run the two services sep
 
 **TODO:**
 * Dockerize
+* go/beego ?
 * Setup script
     * figure out how source the virtual environment in the running terminal
     * create similar script to run on windows
