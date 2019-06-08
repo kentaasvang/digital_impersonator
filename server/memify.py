@@ -91,7 +91,7 @@ class Meme:
             if o_sys in ["Darwin", "Linux"]:
                 fnt = ImageFont.truetype(self.font_family, self.font_size)
             if o_sys == "Windows":
-                fnt = ImageFont.truetupe("Pillow/Tests/fonts/Arial.ttf", self.font_size)
+                fnt = ImageFont.truetype("Pillow/Tests/fonts/Arial.ttf", self.font_size)
         except OSError as e:
             print("Couldn't find font, loading default. Meme might not display correctly")
             fnt = ImageFont.load_default()

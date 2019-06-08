@@ -7,7 +7,7 @@ from server.back_end_processor import spacy as sp
 
 if __name__ == "__main__":
     # constants 
-    STATS_FILE = "backend_profiling.txt"
+    STATS_FILE = "data/backend_profiling.txt"
    
     """ produce data """
 #    pr = cProfile.Profile()

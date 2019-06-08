@@ -1,11 +1,17 @@
 import os
 
 import time
-from client import app, api
-from flask import render_template, request, jsonify
-from flask_restful import Resource
 import requests
 import json
+
+from client import app, api
+
+from flask import render_template
+from flask import request
+from flask import jsonify
+
+from flask_restful import Resource
+
 from time import sleep
 
 

@@ -1,3 +1,4 @@
+import os
 import random
 # import string
 from server.memify import Meme
@@ -16,7 +17,7 @@ def spacy():
     import pickle
 
     # constants
-    DOC_PICKLE = "pickled_docs.p"
+    DOC_PICKLE = os.path.join("data", "pickled_docs.p")
 
     nlp = en_core_web_sm.load()
 
@@ -25,7 +26,7 @@ def spacy():
         
         # warnings.filterwarnings('ignore')
     
-        tw = pd.read_csv("tweets_trump1.csv", low_memory = False)
+        tw = pd.read_csv("data/tweets_trump1.csv", low_memory = False)
         tw = tw[tw["screen_name"] == "realDonaldTrump"]
         tweets = tw[["screen_name", "text"]]
         tweets["text"] = tweets["text"].replace(r'http\S+', '', regex=True).replace(r'www\S+', '', regex=True)
@@ -482,7 +483,7 @@ def markov():
 
     # df.to_csv("tweets_csv.csv", index=False, sep = "|")
 
-    bt = BotTweet("trump_speeches.txt")
+    bt = BotTweet(os.path.join("data", "trump_speeches.txt"))
 
     print("!!!", bt.make_short_tweet())
     return bt.make_short_tweet()
