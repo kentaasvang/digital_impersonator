@@ -3,7 +3,6 @@
 Digital impersonator is a project about using spaCy, Markov chains/markovify and a RESTful API in Flask to impersonate Donald Trump based on a corpus of data - Tweets or speeches. The front-end displays Donald Trump images with our generated text on them, clearly stating that it is a bot behind. 
 
 Run the impersonator by executing `run-services.py`, or run the two services seperatly (being `run-client.py` and `run-server.py`).
-
 **TODO:**
 * Dockerize
 * go/beego ?
@@ -16,6 +15,18 @@ Run the impersonator by executing `run-services.py`, or run the two services sep
     * refactor memify
     * change front-end
     * create model for page-content
+
+**Set up development environment**
+
+Clone the repo
+```terminal
+>>> git clone https://github.com/kentaasvang/digital_impersonator.git
+```
+
+If on unix-system, run setup.sh
+```terminal
+>>> ./setup.sh
+```
 
 **Who did what**
 
