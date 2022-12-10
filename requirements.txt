@@ -42,3 +42,4 @@ Unidecode==1.0.23
 urllib3==1.26.13
 wasabi==0.10.1
 Werkzeug==2.2.2
+pytest==7.2.0
