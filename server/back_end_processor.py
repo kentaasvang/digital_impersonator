@@ -1,19 +1,12 @@
 import os
-import random
-# import string
 from server.memify import Meme
 
 
 def spacy():
-
-    import spacy
     import pandas as pd
-    from pprint import pprint
-    # from spacy import displacy
     from collections import Counter
     import en_core_web_sm
     import random
-    import warnings
     import pickle
 
     # constants
@@ -21,11 +14,11 @@ def spacy():
 
     nlp = en_core_web_sm.load()
 
+    
+
     def preprocess_tweets():
         pd.set_option('max_colwidth', 120)
-        
-        # warnings.filterwarnings('ignore')
-    
+
         tw = pd.read_csv("data/tweets_trump1.csv", low_memory = False)
         tw = tw[tw["screen_name"] == "realDonaldTrump"]
         tweets = tw[["screen_name", "text"]]
@@ -43,24 +36,22 @@ def spacy():
         tweets["text"] = tweets["text"].str.replace("--", "")
         tweets["text"] = tweets["text"].str.replace("RE:", "")
         tweets["text"] = tweets["text"].str.replace('(&amp)', '')
-        #tweets["text"] = tweets["text"].str.replace(r"(?:\#+[\w_]+[\w\'_\-]*[\w_]+)", "")
         tweets["text"] = tweets["text"].replace('\n', ' ').replace('\r', '')
-    
         tweets1 = tweets["text"]
-    
+
         # transform the tweets to strings to be read by spaCy
         tweets2 = tweets1.to_string(header=False, index=False)
         tweets2 = tweets2.replace('\n', ' ').replace('\r', '').strip()
-    
+
         # split the tweets since the spaCy parser cannot work on a huge corpus
         tweets3 = tweets2[0:1000000]
         doc = nlp(tweets3)
         doc1 = nlp(tweets2[1000000:2000000])
         doc2 = nlp(tweets2[2000000:3000000])
         doc3 = nlp(tweets2[3000000:4000000])
-    
+
         # list of docs
-        docs = [doc, doc1, doc2, doc]
+        docs = [doc, doc1, doc2, doc3]
         pickle.dump(docs, open(DOC_PICKLE, "wb"))
         return docs
   
